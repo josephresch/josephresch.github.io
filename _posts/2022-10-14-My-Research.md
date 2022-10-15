@@ -1,7 +1,0 @@
-layout: post
-title: "My Research"
-date: 2022-10-14
-categories: Thing-1 Thing-2 Thing-3
-
-
-This is a post about my current research.
