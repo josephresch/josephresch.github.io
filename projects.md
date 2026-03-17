@@ -4,26 +4,25 @@ title: Projects
 permalink: /projects/
 ---
 
-This page highlights selected technical projects spanning research code, applied machine learning,
-and statistical computing.
+## Selected Projects
 
-## BayesianTDCM
-GitHub: [josephresch/BayesianTDCM](https://github.com/josephresch/BayesianTDCM)
+### VariationalEstimationERGM
 
-An R package and research codebase for Bayesian transition diagnostic classification models,
-including efficient estimation strategies for longitudinal psychometric applications.
+R code for likelihood approximation procedures and simulation benchmarking in exponential-family random graph models.
 
-## VariationalEstimationERGM
-GitHub: [josephresch/VariationalEstimationERGM](https://github.com/josephresch/VariationalEstimationERGM)
+- GitHub: [josephresch/VariationalEstimationERGM](https://github.com/josephresch/VariationalEstimationERGM)
 
-Code for evaluating variational approaches to inference in exponential-family random graph models,
-with a focus on scalable estimation and benchmarking against more classical procedures.
+### BayesianTDCM
 
-## Applied Insurance Modeling
-During my internship at Farmers Insurance, I developed reusable Python workflows for risk modeling,
-feature engineering, model tuning, and interpretability using large-scale SQL and AWS-based
-pipelines.
+R code associated with Bayesian modeling work for time-series psychometric applications.
 
-## Research Computing
-Across projects, I regularly build simulation pipelines, implement Bayesian samplers,
-and optimize computational workflows for large experiments in R and Python.
+- GitHub: [josephresch/BayesianTDCM](https://github.com/josephresch/BayesianTDCM)
+
+## Industry Experience Snapshot
+
+### Farmers Insurance — Data Science Intern (2025)
+
+- Developed scalable gradient boosting models using XGBoost and LightGBM to predict auto accident risk
+- Engineered features from 80+ million row Snowflake SQL pipelines
+- Trained models in AWS SageMaker with GPU acceleration
+- Tuned models with Optuna and applied SHAP for interpretability

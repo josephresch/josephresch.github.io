@@ -1,8 +1,8 @@
 title: Joseph Resch
 email: jresch@ucla.edu
 description: >-
-  Statistics PhD candidate at UCLA focused on Bayesian modeling, machine learning,
-  and computational statistics.
+  Statistics Ph.D. candidate at UCLA with experience in machine learning,
+  Bayesian modeling, and applied data science.
 baseurl: ""
 url: "https://josephresch.github.io"
 linkedin_username: joseph-resch
@@ -10,3 +10,8 @@ github_username: josephresch
 theme: researcher
 plugins:
   - jekyll-feed
+header_pages:
+  - about.markdown
+  - research.md
+  - projects.md
+  - contact.md

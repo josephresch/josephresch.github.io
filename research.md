@@ -4,30 +4,31 @@ title: Research
 permalink: /research/
 ---
 
-My research focuses on computational statistics, Bayesian methods, and statistical modeling for
-complex structured data.
+## Research Experience
 
-## Main Research Areas
+### Doctoral Researcher, UCLA Statistics & Data Science (2020–2026)
 
-### Exponential-Family Random Graph Models (ERGMs)
-I study statistical inference for network formation models, with emphasis on scalable likelihood
-approximation, variational estimation, Bayesian priors, and MCMC-based computation.
+- Advanced statistical models for social and economic network data using exponential-family random graph models (ERGMs)
+- Derived a Bayesian reference prior for ERGMs and implemented Metropolis-Hastings MCMC and variational Bayes approaches
+- Built a simulation benchmarking framework to evaluate likelihood approximation procedures
+- Optimized pipelines on high-performance computing systems for large-scale simulation studies
+- Repository: [VariationalEstimationERGM](https://github.com/josephresch/VariationalEstimationERGM)
 
-### Bayesian Latent Variable and Psychometric Models
-I work on hierarchical and longitudinal latent variable models for educational measurement,
-including Bayesian estimation strategies using data augmentation and efficient sampling methods.
+### Research Data Scientist, UCLA School of Education & Information Studies (2022–2025)
 
-### Simulation-Based Statistical Evaluation
-A recurring theme in my work is careful benchmarking: comparing estimators, stress-testing methods,
-and quantifying tradeoffs between accuracy, runtime, and scalability.
+- Led a U.S. Department of Education (IES) research project on hierarchical latent-space models for time-series psychometric applications
+- Developed a Bayesian auxiliary sampling framework using Gibbs sampling, variational inference, and Pólya-Gamma data augmentation
+- Reduced runtime through model redesign and Bayesian sampler optimization
+- Repository: [BayesianTDCM](https://github.com/josephresch/BayesianTDCM)
+
+### Research Assistant, University of Georgia Department of Statistics (2018–2020)
+
+- Optimized a time-series rainfall-runoff hydrological simulator using sequential Gaussian process surrogate modeling and Latin hypercube designs
+- Performed parallelized large-scale simulations on a computing cluster using R
+- Improved goodness-of-fit over a competing algorithm and published the work
 
 ## Selected Publications
 
-- **Psychometrika (2025)** — First-author work on psychometric modeling
-- **PLOS One (2025)** — First-author work on ERGM inference
-- **Journal of Statistical Theory and Practice (2023)** — Co-authored work on hydrological modeling
-
-## Broader Themes
-
-My research is motivated by a simple question: how can we make advanced statistical methods more
-computationally practical without sacrificing inferential quality?
+- **Psychometrika (2025)** — first-author publication on a psychometric model
+- **PLOS One (2025)** — first-author publication on ERGM inference
+- **Journal of Statistical Theory and Practice (2023)** — co-author publication on a hydrology model

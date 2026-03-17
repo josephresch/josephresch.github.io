@@ -4,32 +4,25 @@ title: About
 permalink: /about/
 ---
 
-I am a Statistics PhD candidate at UCLA with training in statistics, economics, machine learning,
-and Bayesian computation. My academic work focuses on developing computationally efficient methods
-for complex statistical models, especially in network analysis and latent variable modeling.
+Joseph Resch is a Statistics Ph.D. candidate at UCLA.
 
-Before and during graduate school, I have worked on problems in social network modeling,
-psychometrics, hydrology, and applied machine learning. Across these settings, I am most interested
-in building methods that are both statistically principled and practically useful.
+## Education
 
-## Background
+- **University of California, Los Angeles (UCLA)** — Statistics Ph.D., 2020–2026  
+  GPA: 3.94 | University Teaching Fellow
+- **University of Georgia** — Statistics B.S. and Economics B.A., 2016–2020  
+  Undergraduate Research Fellow
 
-- **University of California, Los Angeles** — PhD in Statistics, expected 2026
-- **University of Georgia** — BS in Statistics and BA in Economics
+## Skills
 
-## Technical Toolkit
+**Programming:** Python, R, SQL, Bash, GitHub, AWS (SageMaker, S3), Tableau, C++, SAS, JMP
 
-- **Languages:** Python, R, SQL, Bash, C++, SAS
-- **Machine Learning:** scikit-learn, XGBoost, LightGBM, PyTorch, Optuna, SHAP
-- **Statistical Computing:** Bayesian modeling, MCMC, variational inference, simulations
-- **Platforms:** AWS SageMaker, Snowflake, Git/GitHub
+**ML Libraries:** Pandas, NumPy, scikit-learn, PyTorch, Optuna, SHAP, Matplotlib, Shiny, Rcpp
 
-## Interests
+**Statistical Methods:** Machine Learning, Bayesian Modeling, Hierarchical Modeling, Latent Variable Models, Variational Inference, MCMC, Causal Inference, A/B Testing, Experimental Design, Segmentation, Simulations
 
-I am especially interested in roles and collaborations involving:
+## Links
 
-- applied machine learning
-- statistical modeling at scale
-- causal and experimental analysis
-- interpretable predictive modeling
-- Bayesian and computational methods
+- [GitHub](https://github.com/josephresch)
+- [LinkedIn](https://www.linkedin.com/in/joseph-resch)
+- [Resume](/assets/Joseph_Resch_Resume.pdf)
