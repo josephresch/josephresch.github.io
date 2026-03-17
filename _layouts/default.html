@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}" />
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="brand" href="{{ '/' | relative_url }}">
+            <span class="brand-name">{{ site.title }}</span>
+            <span class="brand-tagline">{{ site.tagline }}</span>
+          </a>
+
+          <nav class="site-nav" aria-label="Primary">
+            <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>Home</a>
+            <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} class="active"{% endif %}>About</a>
+            <a href="{{ '/research/' | relative_url }}"{% if page.url == '/research/' %} class="active"{% endif %}>Research</a>
+            <a href="{{ '/projects/' | relative_url }}"{% if page.url == '/projects/' %} class="active"{% endif %}>Projects</a>
+            <a href="{{ '/contact/' | relative_url }}"{% if page.url == '/contact/' %} class="active"{% endif %}>Contact</a>
+            <a href="{{ '/assets/Joseph_Resch_Resume.pdf' | relative_url }}">Resume</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="site-main">
+        <div class="container">
+          {{ content }}
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <p>{{ site.title }} · {{ site.footer_text }}</p>
+          <div class="footer-links">
+            <a href="mailto:{{ site.email }}">Email</a>
+            <a href="https://github.com/{{ site.github_username }}">GitHub</a>
+            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}/">LinkedIn</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
