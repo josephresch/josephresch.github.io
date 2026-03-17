@@ -1,0 +1,14 @@
+- name: GitHub
+  icon: fa-brands fa-github
+  url: https://github.com/josephresch
+  enabled: true
+
+- name: LinkedIn
+  icon: fa-brands fa-linkedin
+  url: https://linkedin.com/in/joseph-resch
+  enabled: true
+
+- name: Email
+  icon: fa-solid fa-envelope
+  url: mailto:jresch@ucla.edu
+  enabled: true

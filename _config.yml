@@ -1,17 +1,63 @@
+# Site settings
+url: https://josephresch.github.io
+baseurl:
 title: Joseph Resch
+subtitle: Statistics PhD | Data Science | Machine Learning
+first_name: Joseph
+middle_name:
+last_name: Resch
 email: jresch@ucla.edu
 description: >-
-  Statistics Ph.D. candidate at UCLA with experience in machine learning,
-  Bayesian modeling, and applied data science.
-baseurl: ""
-url: "https://josephresch.github.io"
-linkedin_username: joseph-resch
-github_username: josephresch
-theme: researcher
+  Personal website and portfolio for Joseph Resch, a UCLA Statistics PhD candidate
+  focused on data science, machine learning, Bayesian modeling, experimentation,
+  and large-scale applied modeling.
+footer_text: >-
+  Built with Jekyll and the al-folio remote theme.
+
+lang: en
+icon: ⚙️
+remote_theme: alshedivat/al-folio
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
-header_pages:
-  - about.markdown
-  - research.md
-  - projects.md
-  - contact.md
+  - jekyll-seo-tag
+
+# Theme settings
+navbar_fixed: true
+footer_fixed: true
+search_enabled: false
+enable_darkmode: true
+max_width: 1100px
+serve_og_meta: false
+serve_schema_org: false
+
+# Author / profile settings
+author:
+  name: Joseph Resch
+  email: jresch@ucla.edu
+  linkedin: joseph-resch
+  github: josephresch
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile.lock
