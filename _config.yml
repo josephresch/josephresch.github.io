@@ -1,66 +1,53 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you: 
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
 # Site settings
-url: https://josephresch.github.io
-baseurl:
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
 title: Joseph Resch
-subtitle: Statistics PhD | Data Science | Machine Learning
-first_name: Joseph
-middle_name:
-last_name: Resch
 email: jresch@ucla.edu
-description: >-
-  Personal website and portfolio for Joseph Resch, a UCLA Statistics PhD candidate
-  focused on data science, machine learning, Bayesian modeling, experimentation,
-  and large-scale applied modeling.
-footer_text: >-
-  Built with Jekyll and the al-folio remote theme.
+description: >- # this means to ignore newlines until "baseurl:"
+  This is my website! :D
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "linked.in/my/joseph-resch" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  josephresch
+linkedin_username: joseph-resch
 
-lang: en
-icon: ⚙️
-remote_theme: alshedivat/al-folio
+# Build settings
+theme: minima
 plugins:
-  - jekyll-remote-theme
   - jekyll-feed
-  - jekyll-seo-tag
 
-# Theme settings
-navbar_fixed: true
-footer_fixed: true
-search_enabled: false
-enable_darkmode: true
-max_width: 1100px
-serve_og_meta: false
-serve_schema_org: false
-
-# Author / profile settings
-author:
-  name: Joseph Resch
-  email: jresch@ucla.edu
-  linkedin: joseph-resch
-  github: josephresch
-
-# Collections
-collections:
-  projects:
-    output: true
-    permalink: /projects/:path/
-
-# Defaults
-defaults:
-  - scope:
-      path: ""
-      type: projects
-    values:
-      layout: page
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: page
-
-exclude:
-  - README.md
-  - LICENSE
-  - Gemfile.lock
-
-include:
-  - _pages
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
