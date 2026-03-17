@@ -1,0 +1,47 @@
+:root {
+  --bg: #0b1020;
+  --panel: #121933;
+  --panel-2: #0f1730;
+  --text: #e8edf7;
+  --muted: #9fb0d1;
+  --line: #26304d;
+  --accent: #8ab4ff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(180deg, var(--bg), #0d1328 35%, #0b1020 100%);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { width: min(1100px, calc(100% - 2rem)); margin: 0 auto; }
+.site-header { position: sticky; top: 0; backdrop-filter: blur(10px); background: rgba(11,16,32,0.8); border-bottom: 1px solid var(--line); }
+.header-inner { display:flex; justify-content:space-between; align-items:center; gap: 1rem; padding: 1rem 0; }
+.site-title { color: var(--text); font-size: 1.25rem; font-weight: 700; }
+.site-subtitle { color: var(--muted); font-size: 0.95rem; margin-top: 0.15rem; }
+.site-nav { display:flex; flex-wrap:wrap; gap: 1rem; }
+.site-nav a { color: var(--muted); }
+.site-nav a:hover { color: var(--text); text-decoration:none; }
+.main-content { padding: 3rem 0 4rem; }
+.hero { display:grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items:start; }
+.eyebrow { color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.75rem); line-height: 1.05; margin: 0.2rem 0 0.75rem; }
+h2 { font-size: 1.25rem; margin-top: 1.75rem; }
+h3 { margin-bottom: 0.4rem; }
+.hero-subtitle, .page-description { color: var(--muted); font-size: 1.1rem; }
+.card, .page-wrap { background: rgba(18,25,51,0.78); border: 1px solid var(--line); border-radius: 18px; padding: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+.hero-main { background: rgba(18,25,51,0.55); border: 1px solid var(--line); border-radius: 24px; padding: 2rem; }
+.link-list { list-style:none; padding:0; margin:0; }
+.link-list li { margin: 0.5rem 0; }
+.site-footer { border-top: 1px solid var(--line); color: var(--muted); padding: 1.5rem 0 2rem; }
+ul, ol { padding-left: 1.2rem; }
+li { margin-bottom: 0.45rem; }
+.page-header { margin-bottom: 1.5rem; }
+@media (max-width: 800px) {
+  .header-inner, .hero { grid-template-columns: 1fr; display:block; }
+  .site-nav { margin-top: 0.75rem; }
+  .hero-side { margin-top: 1.5rem; }
+}
