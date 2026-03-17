@@ -1,25 +1,111 @@
 ---
-layout: page
+layout: default
 title: Joseph Resch
-subtitle: Data Scientist & UCLA Statistics PhD
-use-site-title: true
 ---
-<p>
-I am a Research Data Scientist at Meta, working on privacy and infrastructure related problems. I received my PhD from the University of California Los Angeles in the Statistics department. During my PhD I worked on social network modelling with Professor Mark Handcock</a>.
-In particular I am interested in network generation processes, Bayesian social network models, causal inference for social networks and spatial point process models. Please take a look at my research</a> page for publications and working papers. In general I am interested in using statistical models to understand complex social processes, and if modeling these more precisely and unambigously can lead to better interpretation of complex social problems.
-</p>
 
-<p>
-I am originally from the UK and after finishing a masters in Mathematics I trained to be a pensions actuary for two years,
-which was great grounding in basic statistics and data analysis. I've now moved over the pond after finding that I prefered
-tackling interesting data driven problems to calculating people's pensions. I have the privledge to spend my time understanding and explaining data to people and hope to make a career doing just that.
-</p>
+<div class="home-page">
+  <section id="home" class="hero">
+    <h1>Joseph Resch</h1>
+    <div class="subtitle">Statistics Ph.D. | UCLA</div>
+    <div class="contact-line">Los Angeles, CA | <a href="mailto:jresch@ucla.edu">jresch@ucla.edu</a> | (678) 230-0383</div>
+    <div class="meta-line"><a href="https://linkedin.com/in/joseph-resch">LinkedIn</a> | <a href="https://github.com/josephresch">GitHub</a></div>
+  </section>
 
-<p>
-This website gives a couple of examples of small "for fun" projects, as well as a brief description of my current academic research, my resume is available also.
-</p>
+  <section class="section-block">
+    <h2>Education</h2>
+    <div class="card">
+      <div class="entry-header">
+        <div class="entry-title">University of California, Los Angeles (UCLA), Los Angeles, CA</div>
+        <div class="entry-date">2020 – 2026</div>
+      </div>
+      <div>Statistics Ph.D. | GPA: 3.94 | University Teaching Fellow</div>
+    </div>
 
-<p>
-I spend most my free time riding bicycles, sometimes I chase other people riding bicycles in circles too. I like baking cakes and bad sourdough, during the pandemic I slowly transformed my fridge in into a homemade cheese cave.
-Feel free to contact me with any of the below methods, emails relating to cake, bicycles, and/or cheese may receive quicker replies.
-</p>
+    <div class="card">
+      <div class="entry-header">
+        <div class="entry-title">University of Georgia, Athens, GA</div>
+        <div class="entry-date">2016 – 2020</div>
+      </div>
+      <div>Statistics B.S. | Economics B.A. | Undergraduate Research Fellow</div>
+    </div>
+
+    <h2>Skills</h2>
+    <div class="card">
+      <div class="skills-grid">
+        <div class="skill-row"><strong>Programming:</strong> Python, R, SQL, Bash, GitHub, AWS (SageMaker, S3), Tableau, C++, SAS, JMP</div>
+        <div class="skill-row"><strong>ML Libraries:</strong> Pandas, NumPy, scikit-learn, PyTorch, Optuna, SHAP, Matplotlib, Shiny, Rcpp</div>
+        <div class="skill-row"><strong>Statistical Methods:</strong> Machine Learning, Bayesian Modeling, Hierarchical Modeling, Latent Variable Models, Variational Inference, MCMC, Causal Inference, A/B Testing, Experimental Design, Segmentation, Simulations</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications" class="section-block">
+    <h2>Publications</h2>
+    <div class="card">
+      <ul class="compact-list">
+        <li><strong>First-author publications:</strong> <em>Psychometrika</em> (2025) – Psychometric model, <em>PLOS One</em> (2025) – ERGM inference</li>
+        <li><strong>Co-author publications:</strong> <em>Journal of Statistical Theory and Practice</em> (2023) – Hydrology model</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="experience" class="section-block">
+    <h2>Experience</h2>
+
+    <div class="card">
+      <div class="entry-header">
+        <div class="entry-title">Doctoral Researcher, Statistics</div>
+        <div class="entry-date">2020 – 2026</div>
+      </div>
+      <div class="entry-org">UCLA Statistics &amp; Data Science</div>
+      <ul class="compact-list">
+        <li>Advanced statistical models for social and economic network data using exponential-family random graph models (ERGMs), enabling inference on large graphs with complex structural dependencies</li>
+        <li>Derived Bayesian reference prior for ERGMs and implemented Metropolis-Hastings MCMC and variational Bayes approaches; improved model goodness-of-fit by ~15%</li>
+        <li>Built simulation benchmarking framework to evaluate likelihood approximation procedures</li>
+        <li>Optimized pipeline on high-performance cluster computing for large-scale stimulation studies</li>
+        <li><a href="https://github.com/josephresch/VariationalEstimationERGM">VariationalEstimationERGM</a> (R Code)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="entry-header">
+        <div class="entry-title">Data Science Intern</div>
+        <div class="entry-date">2025</div>
+      </div>
+      <div class="entry-org">Farmers Insurance</div>
+      <ul class="compact-list">
+        <li>Developed scalable gradient boosting models (XGBoost, LightGBM) to predict auto accident risk</li>
+        <li>Engineered features from 80+ million row Snowflake SQL pipelines and trained models in AWS SageMaker with GPU acceleration</li>
+        <li>Tuned hyperparameters using Optuna cross-validation and applied SHAP for interpretability</li>
+        <li>Deployed modular, reusable Python workflows portable across domains (forecasting, segmentation, and behavioral analytics), improving high risk detection by 2x over existing infrastructure</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="entry-header">
+        <div class="entry-title">Research Data Scientist</div>
+        <div class="entry-date">2022 – 2025</div>
+      </div>
+      <div class="entry-org">UCLA School of Education &amp; Information Studies</div>
+      <ul class="compact-list">
+        <li>Led U.S. Department of Education (IES) research project advancing hierarchical latent-space models using multivariate logistic regression for time-series psychometric applications</li>
+        <li>Developed Bayesian auxiliary sampling framework enabling likelihood inference using Gibbs sampling and variational inference methods via Pólya-Gamma data augmentation</li>
+        <li>Reduced runtime by ~30% through model redesign and Bayesian sampler optimization</li>
+        <li>Published findings and code; repo: <a href="https://github.com/josephresch/BayesianTDCM">BayesianTDCM</a> (R Code)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="entry-header">
+        <div class="entry-title">Research Assistant</div>
+        <div class="entry-date">2018 – 2020</div>
+      </div>
+      <div class="entry-org">University of Georgia, Department of Statistics</div>
+      <ul class="compact-list">
+        <li>Optimized a time-series rainfall-runoff hydrological simulator using sequential Gaussian process surrogate modeling and Latin hypercube space-filling designs to enable downstream causal analysis</li>
+        <li>Performed parallelized large-scale simulations on a computing cluster using R</li>
+        <li>Improved goodness-of-fit over competing algorithm by 20%; published and presented at conference</li>
+      </ul>
+    </div>
+  </section>
+</div>

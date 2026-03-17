@@ -1,0 +1,120 @@
+---
+---
+@import "minima";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.6;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+}
+
+.site-title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.page-content {
+  padding-top: 32px;
+}
+
+.hero {
+  padding: 24px 0 12px;
+}
+
+.hero h1 {
+  font-size: 2.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.hero .subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 0.75rem;
+}
+
+.contact-line,
+.meta-line {
+  color: #444;
+  margin-bottom: 0.35rem;
+}
+
+.section-block {
+  padding: 34px 0;
+  border-top: 1px solid #e8e8e8;
+}
+
+.section-block h2 {
+  margin-bottom: 1rem;
+}
+
+.card {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  background: #fff;
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.entry-title {
+  font-weight: 700;
+}
+
+.entry-date {
+  color: #666;
+  white-space: nowrap;
+}
+
+.entry-org {
+  font-style: italic;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.compact-list {
+  margin-left: 20px;
+}
+
+.compact-list li {
+  margin-bottom: 6px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.skill-row strong {
+  display: inline-block;
+  min-width: 170px;
+}
+
+@media screen and (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .skill-row strong {
+    display: block;
+    min-width: 0;
+    margin-bottom: 2px;
+  }
+}
