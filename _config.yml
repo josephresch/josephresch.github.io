@@ -61,3 +61,6 @@ exclude:
   - README.md
   - LICENSE
   - Gemfile.lock
+
+include:
+  - _pages
