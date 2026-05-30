@@ -15,7 +15,6 @@ title: Joseph Resch
         <p class="lead">Statistics Ph.D. from UCLA. I build production machine learning systems on large-scale data and develop Bayesian inference methods for complex models.</p>
         <div class="meta-row">
           <a href="mailto:jresch@ucla.edu">jresch@ucla.edu</a>
-          <span>(678) 230-0383</span>
           <span>Los Angeles, CA</span>
         </div>
         <div class="links-row">
@@ -50,10 +49,11 @@ title: Joseph Resch
           <span class="tag">SQL</span>
           <span class="tag">C++</span>
           <span class="tag">Bash</span>
+          <span class="tag">SAS</span>
         </div>
       </div>
       <div class="skill-row">
-        <div class="skill-label">ML &amp; Libraries</div>
+        <div class="skill-label">ML &amp; Data</div>
         <div class="skill-items">
           <span class="tag">scikit-learn</span>
           <span class="tag">PyTorch</span>
@@ -63,34 +63,32 @@ title: Joseph Resch
           <span class="tag">NumPy</span>
           <span class="tag">Optuna</span>
           <span class="tag">SHAP</span>
-          <span class="tag">Matplotlib</span>
+          <span class="tag">Rcpp</span>
+          <span class="tag">Shiny</span>
         </div>
       </div>
       <div class="skill-row">
-        <div class="skill-label">Statistical Methods</div>
+        <div class="skill-label">Methods</div>
         <div class="skill-items">
+          <span class="tag">Machine Learning</span>
           <span class="tag">Bayesian Modeling</span>
+          <span class="tag">A/B Testing &amp; Experimental Design</span>
+          <span class="tag">Causal Inference</span>
+          <span class="tag">Simulations</span>
+          <span class="tag">Hierarchical Models</span>
+          <span class="tag">Latent-Variable Models</span>
           <span class="tag">MCMC</span>
           <span class="tag">Variational Inference</span>
-          <span class="tag">Hierarchical Models</span>
-          <span class="tag">Latent Variable Models</span>
-          <span class="tag">Gaussian Processes</span>
-          <span class="tag">Experimental Design</span>
-          <span class="tag">A/B Testing</span>
-          <span class="tag">Causal Inference</span>
-          <span class="tag">Simulation</span>
+          <span class="tag">Segmentation</span>
         </div>
       </div>
       <div class="skill-row">
-        <div class="skill-label">Tools &amp; Platforms</div>
+        <div class="skill-label">Tools &amp; Cloud</div>
         <div class="skill-items">
           <span class="tag">AWS (SageMaker, S3)</span>
           <span class="tag">Snowflake</span>
           <span class="tag">Git</span>
-          <span class="tag">Shiny</span>
-          <span class="tag">Rcpp</span>
           <span class="tag">Tableau</span>
-          <span class="tag">SAS</span>
           <span class="tag">JMP</span>
         </div>
       </div>
@@ -105,15 +103,15 @@ title: Joseph Resch
       <article class="entry">
         <div class="entry-head">
           <div>
-            <h3>Doctoral Researcher</h3>
+            <h3>Doctoral Researcher, Statistics &amp; Machine Learning</h3>
             <div class="entry-org">UCLA Statistics &amp; Data Science</div>
           </div>
           <div class="entry-date">2020 &ndash; 2026</div>
         </div>
         <ul>
-          <li>Advanced statistical models for social and economic network data using exponential-family random graph models (ERGMs), enabling inference on large graphs with complex structural dependencies.</li>
-          <li>Derived a Bayesian reference prior for ERGMs and implemented Metropolis-Hastings MCMC and variational Bayes approaches; improved goodness-of-fit by roughly 15%.</li>
-          <li>Built a simulation benchmarking framework to evaluate likelihood approximation procedures, optimized for high-performance cluster computing.</li>
+          <li>Developed scalable Bayesian inference for exponential-family random graph models (ERGMs), enabling estimation on social and economic networks too large for standard methods; first-author methods paper currently under review.</li>
+          <li>Derived a Bayesian reference prior and implemented Metropolis-Hastings MCMC and variational-Bayes estimators, improving model goodness-of-fit by roughly 15%.</li>
+          <li>Built a simulation benchmarking framework for likelihood-approximation methods and optimized it for large-scale runs on HPC clusters.</li>
         </ul>
         <div class="entry-links">
           <a href="https://github.com/josephresch/VariationalEstimationERGM">VariationalEstimationERGM (R)</a>
@@ -129,9 +127,10 @@ title: Joseph Resch
           <div class="entry-date">2025</div>
         </div>
         <ul>
-          <li>Developed scalable gradient boosting models (XGBoost, LightGBM) to predict auto accident risk.</li>
-          <li>Engineered features from 80+ million row Snowflake SQL pipelines and trained models in AWS SageMaker with GPU acceleration.</li>
-          <li>Tuned hyperparameters with Optuna and applied SHAP for interpretability; deployed modular Python workflows that improved high-risk detection by 2x over existing infrastructure.</li>
+          <li>Built XGBoost and LightGBM risk-segmentation models that identified the top auto-risk decile with over 2x the lift of the production GLM baseline.</li>
+          <li>Shipped the models to production, where they now drive risk segmentation and targeted high-risk campaigns.</li>
+          <li>Engineered features from 80M+ row Snowflake SQL pipelines, building reusable workflows for risk modeling at scale.</li>
+          <li>Trained models on AWS SageMaker with GPU acceleration, tuned hyperparameters with Optuna, and used SHAP to make risk drivers interpretable for non-technical stakeholders.</li>
         </ul>
       </article>
 
@@ -144,9 +143,10 @@ title: Joseph Resch
           <div class="entry-date">2022 &ndash; 2025</div>
         </div>
         <ul>
-          <li>Led a U.S. Department of Education (IES) research project advancing hierarchical latent-space models for time-series psychometric applications.</li>
-          <li>Developed a Bayesian auxiliary sampling framework for likelihood inference using Gibbs sampling and variational inference via Pólya-Gamma data augmentation.</li>
-          <li>Reduced runtime by roughly 30% through model redesign and sampler optimization; published findings and code.</li>
+          <li>Led an IES (U.S. Department of Education) funded project end to end, from problem framing to a first-author publication in Psychometrika: a Bayesian longitudinal model estimating intervention effects on students' skill acquisition over time, validated on real educational testing data.</li>
+          <li>Senior member of a three-person data science team. My work seeded two follow-on projects taken on by later-hired data scientists, whom I onboarded and supported with internal code documentation.</li>
+          <li>Derived an efficient Gibbs sampler using Pólya-Gamma augmentation, cutting runtime by roughly 30% and making inference tractable at scale.</li>
+          <li>Validated parameter recovery and released the implementation as an R package.</li>
         </ul>
         <div class="entry-links">
           <a href="https://github.com/josephresch/BayesianTDCM">BayesianTDCM (R)</a>
@@ -162,8 +162,8 @@ title: Joseph Resch
           <div class="entry-date">2018 &ndash; 2020</div>
         </div>
         <ul>
-          <li>Optimized a time-series rainfall-runoff hydrological simulator using sequential Gaussian process surrogate modeling and Latin hypercube space-filling designs.</li>
-          <li>Ran parallelized large-scale simulations on a computing cluster in R; improved goodness-of-fit over the competing algorithm by 20%, published and presented at conference.</li>
+          <li>Built sequential Gaussian-process surrogate models with space-filling designs to calibrate an expensive black-box simulator (a hydrological inverse problem), improving fit by roughly 20% over competing methods; co-authored a paper in the Journal of Statistical Theory and Practice.</li>
+          <li>Ran large-scale parallelized simulations on an HPC cluster in R.</li>
         </ul>
       </article>
     </div>
@@ -216,7 +216,7 @@ title: Joseph Resch
         <article class="pub">
           <h3>Assessing Variational Likelihood Estimation in Network Formation Models</h3>
           <p class="pub-authors">Resch, J., &amp; Handcock, M. S.</p>
-          <p class="pub-venue">In review</p>
+          <p class="pub-venue">Under review</p>
           <div class="entry-links">
             <a href="https://github.com/josephresch/VariationalEstimationERGM">Code</a>
           </div>
