@@ -151,6 +151,43 @@ image: /assets/headshot.jpg
     </div>
   </section>
 
+  <section id="projects" class="band nav-section section-anchor">
+    <div class="band-head">
+      <span class="kicker">Projects</span>
+    </div>
+    <article class="project">
+      <div class="entry-head">
+        <div>
+          <h3>Measuring what a math intervention actually taught</h3>
+          <div class="entry-org">First-author paper in <em>Psychometrika</em> (2025) &middot; released as an R package</div>
+        </div>
+      </div>
+      <div class="project-body">
+        <p>In a math education study, 849 students took the same 21-question test twice. In between, 423 of them received a new instructional program. Whether the program worked is a harder question than it sounds, because the thing you care about is hidden. Each question draws on underlying skills, such as proportional reasoning, that no single answer measures directly.</p>
+        <p>I modeled each skill as a hidden state a student can gain or lose between tests, with the gains and losses written as logistic regressions. The intervention enters as a coefficient you can read directly in log-odds. Estimating three coupled layers of latent structure is normally painful, so I used P&oacute;lya-gamma augmentation to reduce the whole model to a Gibbs sampler with closed-form updates. It runs fast and it mixes well.</p>
+        <figure class="project-fig">
+          <picture>
+            <source srcset="{{ '/assets/projects/tdcm-effects.webp' | relative_url }}" type="image/webp" />
+            <img src="{{ '/assets/projects/tdcm-effects.png' | relative_url }}" alt="Estimated intervention effects on skill transitions with 95% credible intervals, shown for four skills" width="1400" height="692" loading="lazy" />
+          </picture>
+          <figcaption>Estimated effects on skill transitions, with 95% credible intervals, for each of the four skills. The intervention terms are the ones to watch: &ldquo;0&rarr;1 Intervention&rdquo; is the program&rsquo;s effect on gaining a skill, &ldquo;1&rarr;0 Intervention&rdquo; its effect on losing one.</figcaption>
+        </figure>
+        <p>The program clearly raised students&rsquo; odds of gaining three of the four skills. For the fourth, the effect was indistinguishable from zero, which is worth knowing too. And the model checks out against reality: response data simulated from the fit tracks the observed data question by question, with AUC near 0.87 at both time points.</p>
+        <figure class="project-fig">
+          <picture>
+            <source srcset="{{ '/assets/projects/tdcm-ppc.webp' | relative_url }}" type="image/webp" />
+            <img src="{{ '/assets/projects/tdcm-ppc.png' | relative_url }}" alt="Posterior predictive check comparing observed question-level response rates to model simulations at both time points" width="1400" height="507" loading="lazy" />
+          </picture>
+          <figcaption>Posterior predictive check. Red dots are the observed share of students answering each question correctly; boxplots are what the fitted model simulates.</figcaption>
+        </figure>
+      </div>
+      <div class="entry-links">
+        <a href="https://doi.org/10.1017/psy.2025.10031">Paper (open access)</a>
+        <a href="https://github.com/josephresch/BayesianTDCM">R package</a>
+      </div>
+    </article>
+  </section>
+
   <section id="education" class="band section-anchor">
     <div class="band-head">
       <span class="kicker">Education</span>

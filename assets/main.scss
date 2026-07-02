@@ -392,6 +392,37 @@ a {
   text-decoration: underline;
 }
 
+/* ---------- Projects ---------- */
+.project-body {
+  max-width: 70ch;
+}
+
+.project-body p {
+  margin: 0 0 16px;
+  font-size: 1.02rem;
+}
+
+.project-fig {
+  margin: 26px 0 28px;
+  max-width: 100%;
+}
+
+.project-fig img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.project-fig figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
 /* ---------- Publications ---------- */
 .pub-list {
   display: grid;
