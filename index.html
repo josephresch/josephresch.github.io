@@ -1,13 +1,17 @@
 ---
 layout: default
 title: Joseph Resch
+image: /assets/headshot.jpg
 ---
 
 <div class="site">
   <section id="home" class="hero section-anchor">
     <div class="hero-grid">
       <div class="hero-portrait">
-        <img src="{{ '/assets/headshot.png' | relative_url }}" alt="Portrait of Joseph Resch" width="200" height="230" />
+        <picture>
+          <source srcset="{{ '/assets/headshot.webp' | relative_url }}" type="image/webp" />
+          <img src="{{ '/assets/headshot.jpg' | relative_url }}" alt="Portrait of Joseph Resch" width="200" height="230" />
+        </picture>
       </div>
       <div class="hero-intro">
         <p class="eyebrow">Statistician &middot; Data Scientist</p>
