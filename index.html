@@ -186,6 +186,30 @@ image: /assets/headshot.jpg
         <a href="https://github.com/josephresch/BayesianTDCM">R package</a>
       </div>
     </article>
+
+    <article class="project">
+      <div class="entry-head">
+        <div>
+          <h3>Stress-testing a fast estimator for network models</h3>
+          <div class="entry-org">With Mark S. Handcock &middot; under review at <em>PLOS One</em> &middot; dissertation work</div>
+        </div>
+      </div>
+      <div class="project-body">
+        <p>Models of network formation, who befriends whom, who trades with whom, are notoriously expensive to fit. The likelihood involves a sum over every possible network, so exact computation is hopeless beyond a handful of nodes. A recently proposed variational method promised estimates at a fraction of the usual cost.</p>
+        <p>Before a method like that becomes standard, someone should check it on the models people actually use. I built a simulation framework that pits the variational estimator against the established alternatives on networks with realistic structure, including the clustering you see in real social networks, at sizes from 50 nodes to 10,000.</p>
+        <p>The fast method failed on both counts. Its estimates piled up at extreme values while the standard approaches stayed centered on the truth, and it was slower too. On the 10,000-node network it had not finished after two weeks of runtime; a sampled pseudo-likelihood estimator got accurate answers in about two hours. Sometimes the most useful result is a clear warning label.</p>
+        <figure class="project-fig">
+          <picture>
+            <source srcset="{{ '/assets/projects/ergm-estimates.webp' | relative_url }}" type="image/webp" />
+            <img src="{{ '/assets/projects/ergm-estimates.png' | relative_url }}" alt="Sampling distributions of three estimators across four model parameters; the two standard methods center on the true value while the variational method piles mass at extremes" width="1400" height="1072" loading="lazy" />
+          </picture>
+          <figcaption>Sampling distributions of parameter estimates for a 100-node network model, with the true values in orange. The standard methods (top and bottom rows) center on the truth. The variational method (middle) piles mass at extreme values, even after winsorizing, and is plotted on a wider scale.</figcaption>
+        </figure>
+      </div>
+      <div class="entry-links">
+        <a href="https://github.com/josephresch/VariationalEstimationERGM">Code (R)</a>
+      </div>
+    </article>
   </section>
 
   <section id="education" class="band section-anchor">
