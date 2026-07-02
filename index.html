@@ -210,6 +210,37 @@ image: /assets/headshot.jpg
         <a href="https://github.com/josephresch/VariationalEstimationERGM">Code (R)</a>
       </div>
     </article>
+
+    <article class="project">
+      <div class="entry-head">
+        <div>
+          <h3>Tuning a simulator you can&rsquo;t afford to run</h3>
+          <div class="entry-org">With Pritam Ranjan and Abhyuday Mandal &middot; <em>Journal of Statistical Theory and Practice</em> (2023)</div>
+        </div>
+      </div>
+      <div class="project-body">
+        <p>Hydrologists model rainfall runoff with a simulator, but nobody knows which input settings make it behave like a real site. Each run is expensive, the output is a series over 5,445 time points, and the observed data is noisier than anything the simulator produces. The task is to find the settings whose output matches reality, in as few runs as possible.</p>
+        <figure class="project-fig">
+          <picture>
+            <source srcset="{{ '/assets/projects/jstp-problem.webp' | relative_url }}" type="image/webp" />
+            <img src="{{ '/assets/projects/jstp-problem.png' | relative_url }}" alt="Observed rainfall runoff series in red against several simulator outputs at random input settings in blue, none of which match" width="1400" height="868" loading="lazy" />
+          </picture>
+          <figcaption>The problem: observed runoff (red) against simulator runs at a few random input settings (blue). Nothing matches out of the box.</figcaption>
+        </figure>
+        <p>Our approach compresses the target series to a handful of carefully chosen time points using regression splines, then solves the matching problem at each point with Gaussian process surrogates and sequential design. Fifty simulator runs total. My part was the engineering: I implemented the surrogate models and ran the large parallelized simulation studies on an HPC cluster that benchmarked the method against its competitors.</p>
+        <p>On the real runoff data, from a composting facility in Athens, Georgia, the method beat both established competitors on every goodness-of-fit measure, with roughly 20% lower error than the standard scalarization approach and an R&sup2; of 0.93. It also quantifies the uncertainty in the recovered inputs, so you know how far to trust the tuning.</p>
+        <figure class="project-fig">
+          <picture>
+            <source srcset="{{ '/assets/projects/jstp-fit.webp' | relative_url }}" type="image/webp" />
+            <img src="{{ '/assets/projects/jstp-fit.png' | relative_url }}" alt="Observed runoff series in black with recovered solutions from three methods overlaid; the proposed method in red tracks it most closely" width="1400" height="737" loading="lazy" />
+          </picture>
+          <figcaption>The result: inverse solutions recovered by three methods. Ours (red) tracks the observed series (black) most closely, with R&sup2; 0.93 against 0.89 for the next best.</figcaption>
+        </figure>
+      </div>
+      <div class="entry-links">
+        <a href="https://doi.org/10.1007/s42519-022-00312-5">Paper (DOI)</a>
+      </div>
+    </article>
   </section>
 
   <section id="education" class="band section-anchor">
