@@ -5,18 +5,27 @@ image: /assets/headshot.jpg
 ---
 
 <div class="site">
-  <section id="home" class="hero section-anchor">
+  <section id="home" class="hero nav-section section-anchor">
     <div class="hero-grid">
-      <div class="hero-portrait">
-        <picture>
-          <source srcset="{{ '/assets/headshot.webp' | relative_url }}" type="image/webp" />
-          <img src="{{ '/assets/headshot.jpg' | relative_url }}" alt="Portrait of Joseph Resch" width="200" height="230" />
-        </picture>
-      </div>
-      <div class="hero-intro">
-        <p class="eyebrow">Statistician &middot; Data Scientist</p>
-        <h1>Joseph Resch</h1>
-        <p class="lead">Statistics Ph.D. from UCLA. I combine Bayesian modeling, causal inference, and experimentation to measure what works, and machine learning to put it to work.</p>
+      <div class="hero-main">
+        <div class="hero-head">
+          <div class="hero-portrait">
+            <picture>
+              <source srcset="{{ '/assets/headshot.webp' | relative_url }}" type="image/webp" />
+              <img src="{{ '/assets/headshot.jpg' | relative_url }}" alt="Portrait of Joseph Resch" width="200" height="230" />
+            </picture>
+          </div>
+          <div class="hero-name">
+            <p class="eyebrow">Statistician &middot; Data Scientist</p>
+            <h1>Joseph Resch</h1>
+          </div>
+        </div>
+        <p class="lead">Statistics Ph.D. from UCLA with a background in economics.</p>
+        <p class="lead-sub">Experienced in Bayesian modeling, causal inference, experimentation, and machine learning.</p>
+        <div class="about-body section-anchor" id="about">
+          <p>I'm a statistician with a Ph.D. from UCLA. My dissertation developed Bayesian methods for social and economic networks, the kind of models that describe how friendships and trade relationships form. As a research data scientist in psychometrics, I built hierarchical Bayesian models that track students' latent skills over time, and released the method as an R package.</p>
+          <p>At Farmers Insurance I trained gradient boosted risk models that now inform how the company prices and segments auto risk. I'm at my best where all of this comes together: experimentation and causal inference to learn what works, Bayesian modeling to stay honest about uncertainty, and machine learning to act on it.</p>
+        </div>
         <div class="meta-row">
           <a href="mailto:jresch@ucla.edu">jresch@ucla.edu</a>
           <span>Los Angeles, CA</span>
@@ -27,20 +36,188 @@ image: /assets/headshot.jpg
           <a class="btn" href="https://github.com/josephresch">GitHub</a>
         </div>
       </div>
+
+      <aside class="hero-projects nav-section section-anchor" id="projects" aria-label="Projects">
+        <div class="band-head">
+          <span class="kicker">Projects</span>
+        </div>
+        <div class="project-list">
+          {%- assign selected_projects = site.projects | sort: "order" -%}
+          {%- for project in selected_projects %}
+          <a class="project-item" href="{{ project.url | relative_url }}">
+            <h3 class="project-item-title">{{ project.title | escape }}</h3>
+            <p class="project-item-summary">{{ project.description | escape }}</p>
+            <p class="project-item-venue">{{ project.venue }}</p>
+          </a>
+          {%- endfor %}
+        </div>
+      </aside>
     </div>
   </section>
 
-  <section id="about" class="band nav-section section-anchor">
+  <section id="experience" class="band nav-section section-anchor">
     <div class="band-head">
-      <span class="kicker">About</span>
+      <span class="kicker">Experience</span>
     </div>
-    <div class="about-body">
-      <p>I'm a statistician with a Ph.D. from UCLA. My dissertation developed Bayesian methods for social and economic networks, the kind of models that describe how friendships and trade relationships form. As a research data scientist in psychometrics, I built hierarchical Bayesian models that track students' latent skills over time, and released the method as an R package.</p>
-      <p>At Farmers Insurance I trained gradient boosted risk models that now inform how the company prices and segments auto risk. I'm at my best where all of this comes together: experimentation and causal inference to learn what works, Bayesian modeling to stay honest about uncertainty, and machine learning to act on it.</p>
+    <div class="entry-list">
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>Doctoral Researcher, Statistics &amp; Machine Learning</h3>
+            <div class="entry-org">UCLA Statistics &amp; Data Science</div>
+          </div>
+          <div class="entry-date">2020 &ndash; 2026</div>
+        </div>
+        <ul>
+          <li>Developed scalable Bayesian inference for exponential-family random graph models (ERGMs), enabling estimation on social and economic networks too large for standard methods; first-author methods paper accepted at PLOS One (2026).</li>
+          <li>Derived a Bayesian reference prior and implemented Metropolis-Hastings MCMC and variational-Bayes estimators, improving model goodness-of-fit by roughly 15%.</li>
+          <li>Built a simulation benchmarking framework for likelihood-approximation methods and optimized it for large-scale runs on HPC clusters.</li>
+        </ul>
+        <div class="entry-links">
+          <a href="{{ '/projects/reference-prior/' | relative_url }}">Reference prior</a>
+          <a href="{{ '/projects/hmc-sampler/' | relative_url }}">Hamiltonian Monte Carlo</a>
+          <a href="{{ '/projects/network-estimator-benchmark/' | relative_url }}">Estimator benchmark</a>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>Data Science Intern</h3>
+            <div class="entry-org">Farmers Insurance</div>
+          </div>
+          <div class="entry-date">2025</div>
+        </div>
+        <ul>
+          <li>Built XGBoost and LightGBM risk-segmentation models that identified the top auto-risk decile with over 2x the lift of the production GLM baseline.</li>
+          <li>Shipped the models to production, where they now drive risk segmentation and targeted high-risk campaigns.</li>
+          <li>Engineered features from 80M+ row Snowflake SQL pipelines, building reusable workflows for risk modeling at scale.</li>
+          <li>Trained models on AWS SageMaker with GPU acceleration, tuned hyperparameters with Optuna, and used SHAP to make risk drivers interpretable for non-technical stakeholders.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>Research Data Scientist</h3>
+            <div class="entry-org">UCLA School of Education &amp; Information Studies</div>
+          </div>
+          <div class="entry-date">2022 &ndash; 2025</div>
+        </div>
+        <ul>
+          <li>Led an IES (U.S. Department of Education) funded project end to end, from problem framing to a first-author publication in Psychometrika: a Bayesian longitudinal model estimating intervention effects on students' skill acquisition over time, validated on real educational testing data.</li>
+          <li>Senior member of a three-person data science team. My work seeded two follow-on projects taken on by later-hired data scientists, whom I onboarded and supported with internal code documentation.</li>
+          <li>Derived an efficient Gibbs sampler using Pólya-Gamma augmentation, cutting runtime by roughly 30% and making inference tractable at scale.</li>
+          <li>Validated parameter recovery and released the implementation as an R package.</li>
+        </ul>
+        <div class="entry-links">
+          <a href="{{ '/projects/educational-intervention-effects/' | relative_url }}">Intervention effects</a>
+          <a href="https://github.com/josephresch/BayesianTDCM">BayesianTDCM (R)</a>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>Research Assistant</h3>
+            <div class="entry-org">University of Georgia, Department of Statistics</div>
+          </div>
+          <div class="entry-date">2018 &ndash; 2020</div>
+        </div>
+        <ul>
+          <li>Built sequential Gaussian-process surrogate models with space-filling designs to calibrate an expensive black-box simulator (a hydrological inverse problem), improving fit by roughly 20% over competing methods; co-authored a paper in the Journal of Statistical Theory and Practice.</li>
+          <li>Ran large-scale parallelized simulations on an HPC cluster in R.</li>
+        </ul>
+        <div class="entry-links">
+          <a href="{{ '/projects/simulator-calibration/' | relative_url }}">Rainfall-runoff calibration</a>
+        </div>
+      </article>
     </div>
   </section>
 
-  <section id="skills" class="band section-anchor">
+  <section id="publications" class="band nav-section section-anchor">
+    <div class="band-head">
+      <span class="kicker">Publications</span>
+    </div>
+    <div class="pub-list">
+      <div class="pub-group">
+        <div class="pub-group-label">First author</div>
+        <article class="pub">
+          <h3>Bayesian Transition Diagnostic Classification Models with Pólya-Gamma Augmentation</h3>
+          <p class="pub-authors">Resch, J., Baugh, S., Duan, H., Tang, J., Madison, M. J., Cotterell, M., &amp; Jeon, M.</p>
+          <p class="pub-venue"><em>Psychometrika</em>, 90(4), 1368&ndash;1399 (2025)</p>
+          <div class="entry-links">
+            <a href="https://doi.org/10.1017/psy.2025.10031">DOI</a>
+            <a href="https://github.com/josephresch/BayesianTDCM">Code</a>
+          </div>
+        </article>
+        <article class="pub">
+          <h3>Assessing Variational Likelihood Estimation in Network Formation Models</h3>
+          <p class="pub-authors">Resch, J., &amp; Handcock, M. S.</p>
+          <p class="pub-venue"><em>PLOS One</em> (2026, in production)</p>
+          <div class="entry-links">
+            <a href="https://github.com/josephresch/VariationalEstimationERGM">Code</a>
+          </div>
+        </article>
+        <article class="pub">
+          <h3>Non-degeneracy Priors for Exponential-family Random Graph Models</h3>
+          <p class="pub-authors">Resch, J., &amp; Handcock, M. S.</p>
+          <p class="pub-venue">Under review</p>
+          <div class="entry-links">
+            <a href="https://github.com/josephresch/NondegeneracyPriorERGM">Code</a>
+          </div>
+        </article>
+        <article class="pub">
+          <h3>Bayesian Inference for Exponential-Family Random Graph Models with Non-degeneracy Priors</h3>
+          <p class="pub-authors">Resch, J., &amp; Handcock, M. S.</p>
+          <p class="pub-venue">Under review</p>
+          <div class="entry-links">
+            <a href="https://github.com/josephresch/BayesianNDGPriorERGM">Code</a>
+          </div>
+        </article>
+      </div>
+      <div class="pub-group">
+        <div class="pub-group-label">Co-author</div>
+        <article class="pub">
+          <h3>Solving an Inverse Problem for Time-Series-Valued Computer Simulators via Multiple Contour Estimation</h3>
+          <p class="pub-venue"><em>Journal of Statistical Theory and Practice</em> (2023)</p>
+          <div class="entry-links">
+            <a href="https://link.springer.com/article/10.1007/s42519-022-00312-5">DOI</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="band nav-section section-anchor">
+    <div class="band-head">
+      <span class="kicker">Education</span>
+    </div>
+    <div class="entry-list">
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>Ph.D., Statistics</h3>
+            <div class="entry-org">University of California, Los Angeles</div>
+          </div>
+          <div class="entry-date">2020 &ndash; 2026</div>
+        </div>
+        <p class="entry-note">Bayesian inference for network models &middot; University Teaching Fellow</p>
+      </article>
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>B.A. Economics, B.S. Statistics</h3>
+            <div class="entry-org">University of Georgia</div>
+          </div>
+          <div class="entry-date">2016 &ndash; 2020</div>
+        </div>
+        <p class="entry-note">Experimental design and sports betting econometrics &middot; Undergraduate Research Fellow</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills" class="band nav-section section-anchor">
     <div class="band-head">
       <span class="kicker">Skills</span>
     </div>
@@ -76,254 +253,6 @@ image: /assets/headshot.jpg
     </div>
   </section>
 
-  <section id="experience" class="band nav-section section-anchor">
-    <div class="band-head">
-      <span class="kicker">Experience</span>
-    </div>
-    <div class="entry-list">
-      <article class="entry">
-        <div class="entry-head">
-          <div>
-            <h3>Doctoral Researcher, Statistics &amp; Machine Learning</h3>
-            <div class="entry-org">UCLA Statistics &amp; Data Science</div>
-          </div>
-          <div class="entry-date">2020 &ndash; 2026</div>
-        </div>
-        <ul>
-          <li>Developed scalable Bayesian inference for exponential-family random graph models (ERGMs), enabling estimation on social and economic networks too large for standard methods; first-author methods paper accepted at PLOS One.</li>
-          <li>Derived a Bayesian reference prior and implemented Metropolis-Hastings MCMC and variational-Bayes estimators, improving model goodness-of-fit by roughly 15%.</li>
-          <li>Built a simulation benchmarking framework for likelihood-approximation methods and optimized it for large-scale runs on HPC clusters.</li>
-        </ul>
-        <div class="entry-links">
-          <a href="https://github.com/josephresch/VariationalEstimationERGM">VariationalEstimationERGM (R)</a>
-        </div>
-      </article>
-
-      <article class="entry">
-        <div class="entry-head">
-          <div>
-            <h3>Data Science Intern</h3>
-            <div class="entry-org">Farmers Insurance</div>
-          </div>
-          <div class="entry-date">2025</div>
-        </div>
-        <ul>
-          <li>Built XGBoost and LightGBM risk-segmentation models that identified the top auto-risk decile with over 2x the lift of the production GLM baseline.</li>
-          <li>Shipped the models to production, where they now drive risk segmentation and targeted high-risk campaigns.</li>
-          <li>Engineered features from 80M+ row Snowflake SQL pipelines, building reusable workflows for risk modeling at scale.</li>
-          <li>Trained models on AWS SageMaker with GPU acceleration, tuned hyperparameters with Optuna, and used SHAP to make risk drivers interpretable for non-technical stakeholders.</li>
-        </ul>
-      </article>
-
-      <article class="entry">
-        <div class="entry-head">
-          <div>
-            <h3>Research Data Scientist</h3>
-            <div class="entry-org">UCLA School of Education &amp; Information Studies</div>
-          </div>
-          <div class="entry-date">2022 &ndash; 2025</div>
-        </div>
-        <ul>
-          <li>Led an IES (U.S. Department of Education) funded project end to end, from problem framing to a first-author publication in Psychometrika: a Bayesian longitudinal model estimating intervention effects on students' skill acquisition over time, validated on real educational testing data.</li>
-          <li>Senior member of a three-person data science team. My work seeded two follow-on projects taken on by later-hired data scientists, whom I onboarded and supported with internal code documentation.</li>
-          <li>Derived an efficient Gibbs sampler using Pólya-Gamma augmentation, cutting runtime by roughly 30% and making inference tractable at scale.</li>
-          <li>Validated parameter recovery and released the implementation as an R package.</li>
-        </ul>
-        <div class="entry-links">
-          <a href="https://github.com/josephresch/BayesianTDCM">BayesianTDCM (R)</a>
-        </div>
-      </article>
-
-      <article class="entry">
-        <div class="entry-head">
-          <div>
-            <h3>Research Assistant</h3>
-            <div class="entry-org">University of Georgia, Department of Statistics</div>
-          </div>
-          <div class="entry-date">2018 &ndash; 2020</div>
-        </div>
-        <ul>
-          <li>Built sequential Gaussian-process surrogate models with space-filling designs to calibrate an expensive black-box simulator (a hydrological inverse problem), improving fit by roughly 20% over competing methods; co-authored a paper in the Journal of Statistical Theory and Practice.</li>
-          <li>Ran large-scale parallelized simulations on an HPC cluster in R.</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <section id="education" class="band section-anchor">
-    <div class="band-head">
-      <span class="kicker">Education</span>
-    </div>
-    <div class="entry-list">
-      <article class="entry">
-        <div class="entry-head">
-          <div>
-            <h3>Ph.D., Statistics</h3>
-            <div class="entry-org">University of California, Los Angeles</div>
-          </div>
-          <div class="entry-date">2020 &ndash; 2026</div>
-        </div>
-        <p class="entry-note">GPA 3.94 &middot; University Teaching Fellow</p>
-      </article>
-      <article class="entry">
-        <div class="entry-head">
-          <div>
-            <h3>B.A. Economics, B.S. Statistics</h3>
-            <div class="entry-org">University of Georgia</div>
-          </div>
-          <div class="entry-date">2016 &ndash; 2020</div>
-        </div>
-        <p class="entry-note">Undergraduate Research Fellow</p>
-      </article>
-    </div>
-  </section>
-
-  <section id="publications" class="band nav-section section-anchor">
-    <div class="band-head">
-      <span class="kicker">Publications</span>
-    </div>
-    <div class="pub-list">
-      <div class="pub-group">
-        <div class="pub-group-label">First author</div>
-        <article class="pub">
-          <h3>Bayesian Transition Diagnostic Classification Models with Pólya-Gamma Augmentation</h3>
-          <p class="pub-authors">Resch, J., Baugh, S., Duan, H., Tang, J., Madison, M. J., Cotterell, M., &amp; Jeon, M.</p>
-          <p class="pub-venue"><em>Psychometrika</em>, 90(4), 1368&ndash;1399 (2025)</p>
-          <div class="entry-links">
-            <a href="https://doi.org/10.1017/psy.2025.10031">DOI</a>
-            <a href="https://github.com/josephresch/BayesianTDCM">Code</a>
-          </div>
-        </article>
-        <article class="pub">
-          <h3>Assessing Variational Likelihood Estimation in Network Formation Models</h3>
-          <p class="pub-authors">Resch, J., &amp; Handcock, M. S.</p>
-          <p class="pub-venue"><em>PLOS One</em> (accepted, in production)</p>
-          <div class="entry-links">
-            <a href="https://github.com/josephresch/VariationalEstimationERGM">Code</a>
-          </div>
-        </article>
-        <article class="pub">
-          <h3>Non-degeneracy Priors for Exponential-family Random Graph Models</h3>
-          <p class="pub-authors">Resch, J., &amp; Handcock, M. S.</p>
-          <p class="pub-venue">Under review</p>
-          <div class="entry-links">
-            <a href="https://github.com/josephresch/NondegeneracyPriorERGM">Code</a>
-          </div>
-        </article>
-        <article class="pub">
-          <h3>Bayesian Inference for Exponential-Family Random Graph Models with Non-degeneracy Priors</h3>
-          <p class="pub-authors">Resch, J., &amp; Handcock, M. S.</p>
-          <p class="pub-venue">Under review</p>
-          <div class="entry-links">
-            <a href="https://github.com/josephresch/BayesianNDGPriorERGM">Code</a>
-          </div>
-        </article>
-      </div>
-      <div class="pub-group">
-        <div class="pub-group-label">Co-author</div>
-        <article class="pub">
-          <h3>Solving an Inverse Problem for Time-Series-Valued Computer Simulators via Multiple Contour Estimation</h3>
-          <p class="pub-venue"><em>Journal of Statistical Theory and Practice</em> (2023)</p>
-          <div class="entry-links">
-            <a href="https://link.springer.com/article/10.1007/s42519-022-00312-5">DOI</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects" class="band nav-section section-anchor">
-    <div class="band-head">
-      <span class="kicker">Projects</span>
-    </div>
-    <article class="project">
-      <div class="entry-head">
-        <div>
-          <h3>Measuring what a math intervention actually taught</h3>
-          <div class="entry-org">First-author paper in <em>Psychometrika</em> (2025) &middot; released as an R package</div>
-        </div>
-      </div>
-      <div class="project-body">
-        <p>In a math education study, 849 students took the same 21-question test twice. In between, 423 of them received a new instructional program. Whether the program worked is a harder question than it sounds, because the thing you care about is hidden. Each question draws on underlying skills, such as proportional reasoning, that no single answer measures directly.</p>
-        <p>I modeled each skill as a hidden state a student can gain or lose between tests, with the gains and losses written as logistic regressions. The intervention enters as a coefficient you can read directly in log-odds. Estimating three coupled layers of latent structure is normally painful, so I used P&oacute;lya-gamma augmentation to reduce the whole model to a Gibbs sampler with closed-form updates. It runs fast and it mixes well.</p>
-        <figure class="project-fig">
-          <picture>
-            <source srcset="{{ '/assets/projects/tdcm-effects.webp' | relative_url }}" type="image/webp" />
-            <img src="{{ '/assets/projects/tdcm-effects.png' | relative_url }}" alt="Estimated intervention effects on skill transitions with 95% credible intervals, shown for four skills" width="1400" height="692" loading="lazy" />
-          </picture>
-          <figcaption>Estimated effects on skill transitions, with 95% credible intervals, for each of the four skills. The intervention terms are the ones to watch: &ldquo;0&rarr;1 Intervention&rdquo; is the program&rsquo;s effect on gaining a skill, &ldquo;1&rarr;0 Intervention&rdquo; its effect on losing one.</figcaption>
-        </figure>
-        <p>The program clearly raised students&rsquo; odds of gaining three of the four skills. For the fourth, the effect was indistinguishable from zero, which is worth knowing too. And the model checks out against reality: response data simulated from the fit tracks the observed data question by question, with AUC near 0.87 at both time points.</p>
-        <figure class="project-fig">
-          <picture>
-            <source srcset="{{ '/assets/projects/tdcm-ppc.webp' | relative_url }}" type="image/webp" />
-            <img src="{{ '/assets/projects/tdcm-ppc.png' | relative_url }}" alt="Posterior predictive check comparing observed question-level response rates to model simulations at both time points" width="1400" height="507" loading="lazy" />
-          </picture>
-          <figcaption>Posterior predictive check. Red dots are the observed share of students answering each question correctly; boxplots are what the fitted model simulates.</figcaption>
-        </figure>
-      </div>
-      <div class="entry-links">
-        <a href="https://doi.org/10.1017/psy.2025.10031">Paper (open access)</a>
-        <a href="https://github.com/josephresch/BayesianTDCM">R package</a>
-      </div>
-    </article>
-
-    <article class="project">
-      <div class="entry-head">
-        <div>
-          <h3>Stress-testing a fast estimator for network models</h3>
-          <div class="entry-org">With Mark S. Handcock &middot; accepted at <em>PLOS One</em> &middot; dissertation work</div>
-        </div>
-      </div>
-      <div class="project-body">
-        <p>Models of network formation, who befriends whom, who trades with whom, are notoriously expensive to fit. The likelihood involves a sum over every possible network, so exact computation is hopeless beyond a handful of nodes. A recently proposed variational method promised estimates at a fraction of the usual cost.</p>
-        <p>Before a method like that becomes standard, someone should check it on the models people actually use. I built a simulation framework that pits the variational estimator against the established alternatives on networks with realistic structure, including the clustering you see in real social networks, at sizes from 50 nodes to 10,000.</p>
-        <p>The fast method failed on both counts. Its estimates piled up at extreme values while the standard approaches stayed centered on the truth, and it was slower too. On the 10,000-node network it had not finished after two weeks of runtime; a sampled pseudo-likelihood estimator got accurate answers in about two hours. Sometimes the most useful result is a clear warning label.</p>
-        <figure class="project-fig">
-          <picture>
-            <source srcset="{{ '/assets/projects/ergm-estimates.webp' | relative_url }}" type="image/webp" />
-            <img src="{{ '/assets/projects/ergm-estimates.png' | relative_url }}" alt="Sampling distributions of three estimators across four model parameters; the two standard methods center on the true value while the variational method piles mass at extremes" width="1400" height="1072" loading="lazy" />
-          </picture>
-          <figcaption>Sampling distributions of parameter estimates for a 100-node network model, with the true values in orange. The standard methods (top and bottom rows) center on the truth. The variational method (middle) piles mass at extreme values, even after winsorizing, and is plotted on a wider scale.</figcaption>
-        </figure>
-      </div>
-      <div class="entry-links">
-        <a href="https://github.com/josephresch/VariationalEstimationERGM">Code (R)</a>
-      </div>
-    </article>
-
-    <article class="project">
-      <div class="entry-head">
-        <div>
-          <h3>Tuning a simulator you can&rsquo;t afford to run</h3>
-          <div class="entry-org">With Pritam Ranjan and Abhyuday Mandal &middot; <em>Journal of Statistical Theory and Practice</em> (2023)</div>
-        </div>
-      </div>
-      <div class="project-body">
-        <p>Hydrologists model rainfall runoff with a simulator, but nobody knows which input settings make it behave like a real site. Each run is expensive, the output is a series over 5,445 time points, and the observed data is noisier than anything the simulator produces. The task is to find the settings whose output matches reality, in as few runs as possible.</p>
-        <figure class="project-fig">
-          <picture>
-            <source srcset="{{ '/assets/projects/jstp-problem.webp' | relative_url }}" type="image/webp" />
-            <img src="{{ '/assets/projects/jstp-problem.png' | relative_url }}" alt="Observed rainfall runoff series in red against several simulator outputs at random input settings in blue, none of which match" width="1400" height="868" loading="lazy" />
-          </picture>
-          <figcaption>The problem: observed runoff (red) against simulator runs at a few random input settings (blue). Nothing matches out of the box.</figcaption>
-        </figure>
-        <p>Our approach compresses the target series to a handful of carefully chosen time points using regression splines, then solves the matching problem at each point with Gaussian process surrogates and sequential design. Fifty simulator runs total. My part was the engineering: I implemented the surrogate models and ran the large parallelized simulation studies on an HPC cluster that benchmarked the method against its competitors.</p>
-        <p>On the real runoff data, from a composting facility in Athens, Georgia, the method beat both established competitors on every goodness-of-fit measure, with roughly 20% lower error than the standard scalarization approach and an R&sup2; of 0.93. It also quantifies the uncertainty in the recovered inputs, so you know how far to trust the tuning.</p>
-        <figure class="project-fig">
-          <picture>
-            <source srcset="{{ '/assets/projects/jstp-fit.webp' | relative_url }}" type="image/webp" />
-            <img src="{{ '/assets/projects/jstp-fit.png' | relative_url }}" alt="Observed runoff series in black with recovered solutions from three methods overlaid; the proposed method in red tracks it most closely" width="1400" height="737" loading="lazy" />
-          </picture>
-          <figcaption>The result: inverse solutions recovered by three methods. Ours (red) tracks the observed series (black) most closely, with R&sup2; 0.93 against 0.89 for the next best.</figcaption>
-        </figure>
-      </div>
-      <div class="entry-links">
-        <a href="https://doi.org/10.1007/s42519-022-00312-5">Paper (DOI)</a>
-      </div>
-    </article>
-  </section>
-
 </div>
 
 <script>
@@ -333,8 +262,7 @@ image: /assets/headshot.jpg
 
     const setActive = (id) => {
       navLinks.forEach((link) => {
-        const isActive = link.getAttribute('href') === '#' + id;
-        link.classList.toggle('is-active', isActive);
+        link.classList.toggle('is-active', link.hash === '#' + id);
       });
     };
 

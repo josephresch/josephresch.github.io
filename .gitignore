@@ -1,5 +1,12 @@
+# Jekyll build output and caches
 _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
 vendor
+
+# macOS
+.DS_Store
+
+# not for the published site: submitted manuscripts and internal work
+private/

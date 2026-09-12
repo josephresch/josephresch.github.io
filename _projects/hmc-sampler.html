@@ -1,0 +1,30 @@
+---
+title: "Fitting Bayesian network models with Hamiltonian Monte Carlo"
+order: 5
+venue: "Under review"
+org: "With Mark S. Handcock &middot; under review &middot; dissertation work"
+description: "Practical approximation for the network reference prior, estimated from the auxiliary draws the sampler already makes."
+image: /assets/projects/ndg-hmc-check.png
+links:
+  - label: "Code (R, C)"
+    url: "https://github.com/josephresch/BayesianNDGPriorERGM"
+---
+  <p>A reference prior is only worth having if you can sample the posterior it defines. Network models make that hard twice over. The likelihood carries a normalizing constant no one can compute, and the non-degeneracy prior carries one of its own, because its density is itself a probability under the model.</p>
+  <p>I wrote a Hamiltonian Monte Carlo sampler that gets the prior for free. Every leapfrog step already draws auxiliary networks to handle the likelihood, and reweighting those same draws gives an estimate of the prior, so the run time barely moves. The convex hull the prior needs is estimated adaptively as the chain explores, the chain starts warm at the pseudo-likelihood estimate, and the step size and trajectory length tune themselves.</p>
+  <p>Seven nodes is small enough to compute the posterior exactly, which gives the approximation something to be judged against. The sampled posterior lands inside the exact 50% and 80% regions under every prior tested.</p>
+  <figure class="project-fig">
+    <picture>
+      <source srcset="{{ '/assets/projects/ndg-hmc-check.webp' | relative_url }}" type="image/webp" />
+      <img src="{{ '/assets/projects/ndg-hmc-check.png' | relative_url }}" alt="Sampled posteriors in blue with the exact posterior 50 and 80 percent regions drawn in red on top, under two priors" width="1400" height="625" loading="lazy" />
+    </picture>
+    <figcaption>Sampled posteriors against the exact posterior, whose 50% and 80% highest-density regions are the red contours. Green is the sampler median, red the observed statistics.</figcaption>
+  </figure>
+  <p>Then a real network. Kapferer recorded friendship ties among 39 workers in a Zambian tailor shop in 1965, 158 edges in all. Fit with a geometrically weighted term, which was designed to keep degeneracy in check on its own, the prior changes nothing measurable. That is the right behavior for a default. Swap in the plain two-star model and the picture changes. Under a normal prior the posterior predicts networks with an upper quartile of 688 edges against the 158 observed. The non-degeneracy prior brings that down to 236.</p>
+  <figure class="project-fig">
+    <picture>
+      <source srcset="{{ '/assets/projects/ndg-kapferer.webp' | relative_url }}" type="image/webp" />
+      <img src="{{ '/assets/projects/ndg-kapferer.png' | relative_url }}" alt="Posterior predictive boxplots for edges, two-stars and GWESP under two priors; the boxes are far tighter under the non-degeneracy prior" width="1400" height="678" loading="lazy" />
+    </picture>
+    <figcaption>Posterior predictive distributions of the sufficient statistics for the tailor shop network under the two-star model. Red dashed lines are the observed values.</figcaption>
+  </figure>
+  <p>A prior that stays out of the way when the model is already well specified and rescues it when it is not is what I want out of a reference prior.</p>

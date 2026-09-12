@@ -1,0 +1,22 @@
+---
+title: "Reference prior for Bayesian network models"
+order: 4
+venue: "Under review"
+org: "With Mark S. Handcock &middot; under review &middot; dissertation work"
+description: "Built from the geometry of the model's convex support, so parameter values that generate empty or complete graphs carry less weight."
+image: /assets/projects/ndg-posteriors.png
+links:
+  - label: "Code (R, C++)"
+    url: "https://github.com/josephresch/NondegeneracyPriorERGM"
+---
+  <p>Fitting a network model the Bayesian way means putting a prior on the parameters, and the default is a wide normal or a uniform box. That looks harmless in the space where you write it down. In the space you care about, the one counting edges and two-stars, it is not. On a seven-node model a normal prior with variance 100 puts 43% of its weight on parameter values that generate near-complete graphs and another 29% on near-empty ones. Only 15% is left for the networks anyone would sit down to model.</p>
+  <p>I built a reference prior out of the model's own geometry instead. Its density at a parameter value is the probability that a network drawn at that value lands in the interior of the convex support, which is where the name non-degeneracy prior comes from. Parameter values that pile probability onto empty or complete graphs get downweighted on their own, with no threshold anywhere. A strength parameter lets you lean on that belief harder when you want to. The prior is proper, it has finite moments of every order, and the posterior stays proper for any network you might observe.</p>
+  <p>The seven-node two-star model is small enough to enumerate every graph, so the prior and the posterior can both be computed exactly rather than sampled. The baseline prior drops the weight on near-complete graphs from 43% to 0.009% while keeping support across the whole interior. That shows up in the posterior. With a normal prior the posterior median sits below the observed statistics, tugged toward the empty-graph corner. With this one it sits on them.</p>
+  <figure class="project-fig">
+    <picture>
+      <source srcset="{{ '/assets/projects/ndg-posteriors.webp' | relative_url }}" type="image/webp" />
+      <img src="{{ '/assets/projects/ndg-posteriors.png' | relative_url }}" alt="Two posterior distributions in edge and two-star space; under the Gaussian prior the posterior median sits below the observed statistics, under the non-degeneracy prior it sits on them" width="1400" height="625" loading="lazy" />
+    </picture>
+    <figcaption>Posteriors for a network with 7 edges and 14 two-stars. Black is the observed statistics, orange the posterior median.</figcaption>
+  </figure>
+  <p>A reference prior should be something you can use without thinking about it. A normal prior on the natural parameters fails that test for network models, and the failure stays invisible until you look at the graphs the prior actually implies.</p>

@@ -1,6 +1,6 @@
 ---
 ---
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap');
 @import "minima";
 
 :root {
@@ -120,19 +120,26 @@ a {
 
 /* ---------- Hero ---------- */
 .hero {
-  padding: 84px 0 72px;
+  padding: 72px 0 64px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 48px;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.hero-head {
+  display: flex;
   align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
 }
 
 .hero-portrait img {
-  width: 200px;
-  height: 200px;
+  width: 132px;
+  height: 132px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center 20%;
@@ -142,7 +149,7 @@ a {
 }
 
 .eyebrow {
-  margin: 0 0 14px;
+  margin: 0 0 10px;
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -150,26 +157,56 @@ a {
   font-weight: 700;
 }
 
-.hero-intro h1 {
+.hero-name h1 {
   margin: 0;
-  font-size: clamp(2.6rem, 5vw, 3.7rem);
-  line-height: 1.04;
+  font-size: clamp(2.1rem, 3.2vw, 2.9rem);
+  line-height: 1.05;
   letter-spacing: -0.035em;
   font-weight: 800;
 }
 
 .lead {
-  margin: 18px 0 0;
-  max-width: 56ch;
-  font-size: 1.12rem;
+  margin: 0;
+  max-width: 58ch;
+  font-size: 1.2rem;
+  line-height: 1.45;
+  font-weight: 600;
+  letter-spacing: -0.014em;
+  color: var(--ink);
+}
+
+.lead-sub {
+  margin: 10px 0 0;
+  max-width: 60ch;
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-size: 1.08rem;
+  line-height: 1.5;
   color: var(--text);
+}
+
+/* ---------- About ---------- */
+.about-body {
+  margin: 20px 0 0;
+  max-width: 62ch;
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+}
+
+.about-body p {
+  margin: 0 0 14px;
+  font-size: 1.04rem;
+  line-height: 1.62;
+  color: var(--text);
+}
+
+.about-body p:last-child {
+  margin-bottom: 0;
 }
 
 .meta-row {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 18px;
-  margin: 22px 0 26px;
+  margin: 26px 0 24px;
   font-size: 0.95rem;
   color: var(--muted);
 }
@@ -240,20 +277,6 @@ a {
   font-weight: 700;
 }
 
-/* ---------- About ---------- */
-.about-body {
-  max-width: 70ch;
-}
-
-.about-body p {
-  margin: 0 0 16px;
-  font-size: 1.08rem;
-}
-
-.about-body p:last-child {
-  margin-bottom: 0;
-}
-
 /* ---------- Skills ---------- */
 .skills {
   display: grid;
@@ -305,6 +328,70 @@ a {
 .tag:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+/* ---------- Projects column ---------- */
+.hero-projects .band-head {
+  margin-bottom: 16px;
+}
+
+.project-list {
+  border-top: 1px solid var(--line);
+}
+
+.project-item {
+  display: block;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-item:hover {
+  text-decoration: none;
+}
+
+.project-item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.project-item-title {
+  margin: 0 0 6px;
+  font-size: 1.02rem;
+  line-height: 1.35;
+  color: var(--ink);
+  transition: color 0.16s ease;
+}
+
+.project-item-title::after {
+  content: " \2192";
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity 0.16s ease;
+}
+
+.project-item:hover .project-item-title,
+.project-item:focus-visible .project-item-title {
+  color: var(--accent);
+}
+
+.project-item:hover .project-item-title::after,
+.project-item:focus-visible .project-item-title::after {
+  opacity: 1;
+}
+
+.project-item-summary {
+  margin: 0 0 8px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.project-item-venue {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--muted);
 }
 
 /* ---------- Entries (experience / education) ---------- */
@@ -393,12 +480,6 @@ a {
 }
 
 /* ---------- Projects ---------- */
-.project + .project {
-  margin-top: 40px;
-  padding-top: 40px;
-  border-top: 1px solid var(--line);
-}
-
 .project-body {
   max-width: 70ch;
 }
@@ -427,6 +508,46 @@ a {
   color: var(--muted);
   font-size: 0.88rem;
   line-height: 1.5;
+}
+
+/* ---------- Project pages ---------- */
+.project-page {
+  padding: 40px 0 64px;
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.back-link-bottom {
+  margin-top: 26px;
+}
+
+.project-header {
+  margin: 26px 0 30px;
+  max-width: 70ch;
+}
+
+.project-header h1 {
+  margin: 10px 0 8px;
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+
+.project-page .entry-links {
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
 }
 
 /* ---------- Publications ---------- */
@@ -484,20 +605,26 @@ a {
 }
 
 /* ---------- Responsive ---------- */
+@media screen and (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
 @media screen and (max-width: 760px) {
   .hero {
     padding: 56px 0 48px;
   }
 
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    align-items: start;
+  .hero-head {
+    gap: 18px;
+    margin-bottom: 20px;
   }
 
   .hero-portrait img {
-    width: 132px;
-    height: 132px;
+    width: 112px;
+    height: 112px;
   }
 
   .skill-row {
@@ -508,5 +635,9 @@ a {
   .entry-head {
     flex-direction: column;
     gap: 2px;
+  }
+
+  .project-page {
+    padding: 28px 0 48px;
   }
 }

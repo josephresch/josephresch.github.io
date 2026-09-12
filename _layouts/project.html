@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<article class="project-page">
+  <a class="back-link" href="{{ '/' | relative_url }}#projects">&larr; All work</a>
+
+  <header class="project-header">
+    <span class="kicker">Selected work</span>
+    <h1>{{ page.title | escape }}</h1>
+    {%- if page.org %}
+    <div class="entry-org">{{ page.org }}</div>
+    {%- endif %}
+  </header>
+
+  <div class="project-body">
+{{ content }}
+  </div>
+
+  {%- if page.links %}
+  <div class="entry-links">
+    {%- for link in page.links %}
+    <a href="{{ link.url }}">{{ link.label | escape }}</a>
+    {%- endfor %}
+  </div>
+  {%- endif %}
+
+  <a class="back-link back-link-bottom" href="{{ '/' | relative_url }}#projects">&larr; All work</a>
+</article>
