@@ -12,7 +12,7 @@ image: /assets/headshot.jpg
           <div class="hero-portrait">
             <picture>
               <source srcset="{{ '/assets/headshot.webp' | relative_url }}" type="image/webp" />
-              <img src="{{ '/assets/headshot.jpg' | relative_url }}" alt="Portrait of Joseph Resch" width="200" height="230" />
+              <img src="{{ '/assets/headshot.jpg' | relative_url }}" alt="Portrait of Joseph Resch" width="132" height="132" />
             </picture>
           </div>
           <div class="hero-name">
@@ -31,9 +31,9 @@ image: /assets/headshot.jpg
           <span>Los Angeles, CA</span>
         </div>
         <div class="links-row">
-          <a class="btn btn-primary" href="{{ '/assets/Joseph_Resch_Resume.pdf' | relative_url }}">Resume</a>
-          <a class="btn" href="https://linkedin.com/in/joseph-resch">LinkedIn</a>
-          <a class="btn" href="https://github.com/josephresch">GitHub</a>
+          <a class="btn btn-primary" href="{{ '/assets/Joseph_Resch_Resume.pdf' | relative_url }}" target="_blank" rel="noopener">Resume</a>
+          <a class="btn" href="https://linkedin.com/in/joseph-resch" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/josephresch" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
 
@@ -112,7 +112,7 @@ image: /assets/headshot.jpg
         </ul>
         <div class="entry-links">
           <a href="{{ '/projects/educational-intervention-effects/' | relative_url }}">Intervention effects</a>
-          <a href="https://github.com/josephresch/BayesianTDCM">BayesianTDCM (R)</a>
+          <a href="https://github.com/josephresch/BayesianTDCM" target="_blank" rel="noopener">BayesianTDCM (R)</a>
         </div>
       </article>
 
@@ -147,8 +147,8 @@ image: /assets/headshot.jpg
           <p class="pub-authors">Resch, J., Baugh, S., Duan, H., Tang, J., Madison, M. J., Cotterell, M., &amp; Jeon, M.</p>
           <p class="pub-venue"><em>Psychometrika</em>, 90(4), 1368&ndash;1399 (2025)</p>
           <div class="entry-links">
-            <a href="https://doi.org/10.1017/psy.2025.10031">DOI</a>
-            <a href="https://github.com/josephresch/BayesianTDCM">Code</a>
+            <a href="https://doi.org/10.1017/psy.2025.10031" target="_blank" rel="noopener">DOI</a>
+            <a href="https://github.com/josephresch/BayesianTDCM" target="_blank" rel="noopener">Code</a>
           </div>
         </article>
         <article class="pub">
@@ -156,7 +156,7 @@ image: /assets/headshot.jpg
           <p class="pub-authors">Resch, J., &amp; Handcock, M. S.</p>
           <p class="pub-venue"><em>PLOS One</em> (2026, in production)</p>
           <div class="entry-links">
-            <a href="https://github.com/josephresch/VariationalEstimationERGM">Code</a>
+            <a href="https://github.com/josephresch/VariationalEstimationERGM" target="_blank" rel="noopener">Code</a>
           </div>
         </article>
         <article class="pub">
@@ -164,7 +164,7 @@ image: /assets/headshot.jpg
           <p class="pub-authors">Resch, J., &amp; Handcock, M. S.</p>
           <p class="pub-venue">Under review</p>
           <div class="entry-links">
-            <a href="https://github.com/josephresch/NondegeneracyPriorERGM">Code</a>
+            <a href="https://github.com/josephresch/NondegeneracyPriorERGM" target="_blank" rel="noopener">Code</a>
           </div>
         </article>
         <article class="pub">
@@ -172,7 +172,7 @@ image: /assets/headshot.jpg
           <p class="pub-authors">Resch, J., &amp; Handcock, M. S.</p>
           <p class="pub-venue">Under review</p>
           <div class="entry-links">
-            <a href="https://github.com/josephresch/BayesianNDGPriorERGM">Code</a>
+            <a href="https://github.com/josephresch/BayesianNDGPriorERGM" target="_blank" rel="noopener">Code</a>
           </div>
         </article>
       </div>
@@ -180,9 +180,11 @@ image: /assets/headshot.jpg
         <div class="pub-group-label">Co-author</div>
         <article class="pub">
           <h3>Solving an Inverse Problem for Time-Series-Valued Computer Simulators via Multiple Contour Estimation</h3>
+          <!-- TODO: confirm the exact author list and order against the published paper -->
+          <p class="pub-authors">Resch, J., Ranjan, P., &amp; Mandal, A.</p>
           <p class="pub-venue"><em>Journal of Statistical Theory and Practice</em> (2023)</p>
           <div class="entry-links">
-            <a href="https://link.springer.com/article/10.1007/s42519-022-00312-5">DOI</a>
+            <a href="https://link.springer.com/article/10.1007/s42519-022-00312-5" target="_blank" rel="noopener">DOI</a>
           </div>
         </article>
       </div>
@@ -257,29 +259,66 @@ image: /assets/headshot.jpg
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const sections = document.querySelectorAll('.nav-section');
-    const navLinks = document.querySelectorAll('.site-nav .page-link');
+    const navLinks = Array.prototype.slice.call(document.querySelectorAll('.site-nav .page-link'));
+    if (!navLinks.length) return;
 
-    const setActive = (id) => {
-      navLinks.forEach((link) => {
-        link.classList.toggle('is-active', link.hash === '#' + id);
+    // Each tracked section maps to the nav link that should be lit for it.
+    // Education and Skills map to Publications so the header never goes blank
+    // at the bottom of the page.
+    const plan = [
+      { id: 'home', target: null },
+      { id: 'projects', target: 'projects' },
+      { id: 'experience', target: 'experience' },
+      { id: 'publications', target: 'publications' },
+      { id: 'education', target: 'publications' },
+      { id: 'skills', target: 'publications' }
+    ];
+
+    const sections = plan
+      .map(function (s) {
+        return { id: s.id, target: s.target, el: document.getElementById(s.id) };
+      })
+      .filter(function (s) { return s.el; });
+
+    const home = sections.filter(function (s) { return s.id === 'home'; })[0];
+
+    const topOf = function (el) {
+      return el.getBoundingClientRect().top + window.pageYOffset;
+    };
+
+    const setActive = function (target) {
+      navLinks.forEach(function (link) {
+        link.classList.toggle('is-active', target !== null && link.hash === '#' + target);
       });
     };
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
-        });
-      },
-      {
-        rootMargin: '-35% 0px -55% 0px',
-        threshold: 0.01
-      }
-    );
+    const update = function () {
+      const line = window.pageYOffset + window.innerHeight * 0.35;
+      let current = null;
 
-    sections.forEach((section) => observer.observe(section));
+      sections.forEach(function (s) {
+        // On wide screens the projects list is the hero's second column and
+        // shares its top edge, so it is not a section you scroll into. Only
+        // count it once the layout has stacked and it really is one.
+        if (s.id === 'projects' && home && topOf(s.el) - topOf(home.el) < 80) return;
+        if (topOf(s.el) <= line) current = s;
+      });
+
+      setActive(current ? current.target : null);
+    };
+
+    let queued = false;
+    const onScroll = function () {
+      if (queued) return;
+      queued = true;
+      window.requestAnimationFrame(function () {
+        queued = false;
+        update();
+      });
+    };
+
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
   });
 </script>

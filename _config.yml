@@ -9,7 +9,7 @@ github_username: josephresch
 linkedin_username: joseph-resch
 theme: minima
 plugins:
-  - jekyll-feed
+  - jekyll-sitemap
 header_pages: []
 
 collections:
