@@ -1,0 +1,40 @@
+---
+layout: default
+permalink: /resume/
+title: Resume
+description: "Resume of Joseph Resch — Statistics Ph.D. from UCLA, experienced in Bayesian modeling, causal inference, experimentation, and machine learning."
+---
+
+{%- assign resume_pdf = '/assets/Joseph_Resch_Resume.pdf' | relative_url -%}
+
+<section class="resume-page">
+  <header class="resume-header">
+    <span class="kicker">Resume</span>
+    <h1>Joseph Resch</h1>
+    <p class="resume-note">Statistician and data scientist. Bayesian modeling, causal inference, experimentation, and machine learning.</p>
+    <div class="links-row">
+      <a class="btn btn-primary" href="{{ resume_pdf }}" download>Download PDF</a>
+      <a class="btn" href="{{ resume_pdf }}" target="_blank" rel="noopener">Open PDF in a new tab</a>
+    </div>
+  </header>
+
+  {%- comment -%}
+    A rendering of the PDF rather than an embedded one. Browsers disagree on
+    how to frame a PDF: Chrome opens a thumbnail sidebar across it, and phones
+    hand it off to a separate viewer entirely. This reads the same everywhere.
+    Regenerate it with tools/build-resume-preview.sh after changing the PDF.
+  {%- endcomment -%}
+  <a class="resume-sheet" href="{{ resume_pdf }}" target="_blank" rel="noopener" aria-label="Open the resume PDF in a new tab">
+    <picture>
+      <source srcset="{{ '/assets/resume-preview.webp' | relative_url }}" type="image/webp" />
+      <img src="{{ '/assets/resume-preview.png' | relative_url }}" alt="One-page resume of Joseph Resch" width="1700" height="2200" />
+    </picture>
+  </a>
+
+  <p class="resume-alt">
+    The same ground is covered as text under
+    <a href="{{ '/' | relative_url }}#experience">experience</a>,
+    <a href="{{ '/' | relative_url }}#publications">publications</a> and
+    <a href="{{ '/' | relative_url }}#skills">skills</a>.
+  </p>
+</section>

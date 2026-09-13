@@ -21,7 +21,31 @@
         <a class="page-link{% if page.collection == 'projects' %} is-active{% endif %}" href="{{ '/' | relative_url }}#projects">Projects</a>
         <a class="page-link" href="{{ '/' | relative_url }}#experience">Experience</a>
         <a class="page-link" href="{{ '/' | relative_url }}#publications">Publications</a>
+        {%- assign on_resume = false -%}
+        {%- if page.url == '/resume/' -%}{%- assign on_resume = true -%}{%- endif -%}
+        <a class="page-link nav-cta" href="{{ '/resume/' | relative_url }}"{% if on_resume %} aria-current="page"{% endif %}>Resume</a>
       </div>
     </nav>
   </div>
 </header>
+
+<script>
+  (function () {
+    var trigger = document.getElementById('nav-trigger');
+    var menu = document.querySelector('.site-nav .trigger');
+    if (!trigger || !menu) return;
+
+    // The small-screen menu is a CSS :checked toggle. The nav links are
+    // same-page anchors, so there is no reload to reset it and the panel
+    // stays open on top of the section you just jumped to. Close it by hand.
+    menu.addEventListener('click', function (event) {
+      if (event.target.closest && event.target.closest('a')) {
+        trigger.checked = false;
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') trigger.checked = false;
+    });
+  })();
+</script>
