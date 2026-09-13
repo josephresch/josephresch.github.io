@@ -23,8 +23,8 @@ LINE, STRONG, ACCENT = (230, 232, 236), (214, 218, 224), (37, 99, 235)
 FONT_FILE = "/System/Library/Fonts/HelveticaNeue.ttc"
 REGULAR, BOLD, MEDIUM = 0, 1, 10
 
-EYEBROW = "APPLIED STATISTICIAN  ·  DATA SCIENTIST"
 NAME = "Joseph Resch"
+ROLE = "Applied Statistician & Data Scientist"
 LEAD = ["Bayesian modeling · Causal inference",
         "Experimentation · Machine learning"]
 SUB = "Statistics Ph.D., UCLA"
@@ -73,19 +73,20 @@ def main():
     card.paste(portrait, (px, py), mask)
 
     x = px + diameter + 78
-    y = py + 6
+    y = py + 2
 
-    tracked(draw, (x, y), EYEBROW, font(23, BOLD), ACCENT, 3.2)
-    y += 52
-    draw.text((x, y), NAME, font=font(88, BOLD), fill=INK)
-    y += 118
+    # Name first, role beneath it.
+    draw.text((x, y), NAME, font=font(84, BOLD), fill=INK)
+    y += 104
+    draw.text((x, y), ROLE, font=font(30, MEDIUM), fill=ACCENT)
+    y += 56
     draw.line([(x, y), (x + 540, y)], fill=LINE, width=2)
-    y += 32
+    y += 30
     for line in LEAD:
-        draw.text((x, y), line, font=font(31, MEDIUM), fill=TEXT)
-        y += 42
-    y += 10
-    draw.text((x, y), SUB, font=font(27, REGULAR), fill=MUTED)
+        draw.text((x, y), line, font=font(29, MEDIUM), fill=TEXT)
+        y += 40
+    y += 8
+    draw.text((x, y), SUB, font=font(26, REGULAR), fill=MUTED)
 
     draw.rectangle([(0, H - 10), (W, H)], fill=ACCENT)
 
