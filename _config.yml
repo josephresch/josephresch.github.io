@@ -1,8 +1,8 @@
 title: Joseph Resch
 email: jresch@ucla.edu
-tagline: Statistician & Data Scientist
+tagline: Applied Statistician & Data Scientist
 description: >-
-  Statistics Ph.D. from UCLA with a background in economics. Experienced in Bayesian modeling, causal inference, experimentation, and machine learning.
+  Statistics Ph.D. from UCLA with an economics background. Experienced in Bayesian modeling, causal inference, experimentation, and machine learning.
 baseurl: ""
 url: "https://josephresch.github.io"
 github_username: josephresch
@@ -39,7 +39,7 @@ defaults:
         path: /assets/og-card.png
         width: 1200
         height: 630
-        alt: "Joseph Resch — Statistician and Data Scientist. Bayesian modeling, causal inference, experimentation, machine learning. Statistics Ph.D., UCLA."
+        alt: "Joseph Resch — Applied Statistician and Data Scientist. Bayesian modeling, causal inference, experimentation, machine learning. Statistics Ph.D., UCLA."
   - scope:
       path: ""
       type: projects

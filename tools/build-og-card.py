@@ -23,7 +23,7 @@ LINE, STRONG, ACCENT = (230, 232, 236), (214, 218, 224), (37, 99, 235)
 FONT_FILE = "/System/Library/Fonts/HelveticaNeue.ttc"
 REGULAR, BOLD, MEDIUM = 0, 1, 10
 
-EYEBROW = "STATISTICIAN  ·  DATA SCIENTIST"
+EYEBROW = "APPLIED STATISTICIAN  ·  DATA SCIENTIST"
 NAME = "Joseph Resch"
 LEAD = ["Bayesian modeling · Causal inference",
         "Experimentation · Machine learning"]

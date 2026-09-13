@@ -17,6 +17,11 @@ gem "github-pages", "~> 227", group: :jekyll_plugins
 # jekyll-feed is not listed: the site has no posts, and minima already pulls it
 # in as a theme dependency, so naming it here only implies it is wanted.
 
+# Ruby 3 dropped webrick from the standard library, and Jekyll 3.x still uses
+# it for `jekyll serve`. Local preview only; GitHub Pages builds with its own
+# bundle and ignores this file.
+gem "webrick", "~> 1.8"
+
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
 platforms :mingw, :x64_mingw, :mswin, :jruby do

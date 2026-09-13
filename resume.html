@@ -9,13 +9,14 @@ description: "Resume of Joseph Resch — Statistics Ph.D. from UCLA, experienced
 
 <section class="resume-page">
   <header class="resume-header">
-    <span class="kicker">Resume</span>
-    <h1>Joseph Resch</h1>
-    <p class="resume-note">Statistician and data scientist. Bayesian modeling, causal inference, experimentation, and machine learning.</p>
-    <div class="links-row">
-      <a class="btn btn-primary" href="{{ resume_pdf }}" download>Download PDF</a>
-      <a class="btn" href="{{ resume_pdf }}" target="_blank" rel="noopener">Open PDF in a new tab</a>
+    <div class="resume-head-row">
+      <h1>Resume</h1>
+      <div class="links-row resume-actions">
+        <a class="btn btn-primary btn-sm" href="{{ resume_pdf }}" download>Download PDF</a>
+        <a class="btn btn-sm" href="{{ resume_pdf }}" target="_blank" rel="noopener">Open PDF in a new tab</a>
+      </div>
     </div>
+    <p class="resume-note">Applied statistician and data scientist. Bayesian modeling, causal inference, experimentation, and machine learning.</p>
   </header>
 
   {%- comment -%}
@@ -30,11 +31,4 @@ description: "Resume of Joseph Resch — Statistics Ph.D. from UCLA, experienced
       <img src="{{ '/assets/resume-preview.png' | relative_url }}" alt="One-page resume of Joseph Resch" width="1700" height="2200" />
     </picture>
   </a>
-
-  <p class="resume-alt">
-    The same ground is covered as text under
-    <a href="{{ '/' | relative_url }}#experience">experience</a>,
-    <a href="{{ '/' | relative_url }}#publications">publications</a> and
-    <a href="{{ '/' | relative_url }}#skills">skills</a>.
-  </p>
 </section>
