@@ -485,6 +485,7 @@ a {
 
 .entry-head {
   display: flex;
+  max-width: var(--measure);
   justify-content: space-between;
   align-items: baseline;
   gap: 18px;
@@ -539,6 +540,7 @@ a {
 .entry-links {
   display: flex;
   flex-wrap: wrap;
+  max-width: var(--measure);
   gap: 16px;
   margin-top: 12px;
 }

@@ -68,7 +68,7 @@ title: Joseph Resch
         </div>
         <ul>
           <li>Developed scalable Bayesian inference for exponential-family random graph models (ERGMs), enabling estimation on social and economic networks too large for standard methods; first-author methods paper in production at <em>PLOS ONE</em> (2026).</li>
-          <li>Derived a Bayesian reference prior and implemented Metropolis-Hastings MCMC and variational-Bayes estimators, improving model goodness-of-fit by roughly 15%.</li>
+          <li>Derived a Bayesian reference prior and implemented Metropolis&ndash;Hastings MCMC and variational-Bayes estimators, improving model goodness-of-fit by roughly 15%.</li>
           <li>Built a simulation benchmarking framework for likelihood-approximation methods and optimized it for large-scale runs on HPC clusters.</li>
         </ul>
         <div class="entry-links">
@@ -87,8 +87,8 @@ title: Joseph Resch
           <div class="entry-date">2025</div>
         </div>
         <ul>
-          <li>Built XGBoost and LightGBM risk-segmentation models that identified the top auto-risk decile with over 2x the lift of the production GLM baseline.</li>
-          <li>Shipped the models to production, where they now drive risk segmentation and targeted high-risk campaigns.</li>
+          <li>Built XGBoost and LightGBM models for insurance pricing and risk segmentation that identified the top auto-risk decile with over 2x the lift of the production GLM baseline.</li>
+          <li>Shipped the models to production, where they now drive marketing experimentation and targeted high-risk campaigns.</li>
           <li>Engineered features from 80M+ row Snowflake SQL pipelines, building reusable workflows for risk modeling at scale.</li>
           <li>Trained models on AWS SageMaker with GPU acceleration, tuned hyperparameters with Optuna, and used SHAP to make risk drivers interpretable for non-technical stakeholders.</li>
         </ul>
@@ -103,14 +103,13 @@ title: Joseph Resch
           <div class="entry-date">2022 &ndash; 2025</div>
         </div>
         <ul>
-          <li>Led an IES (U.S. Department of Education) funded project end to end, from problem framing to a first-author publication in <em>Psychometrika</em>: a Bayesian longitudinal model estimating intervention effects on students' skill acquisition over time, validated on real educational testing data.</li>
+          <li>Led an IES (U.S. Department of Education) funded project end to end, from problem framing to a first-author publication in <em>Psychometrika</em>: estimated causal intervention effects on students' latent skill acquisition with a Bayesian time-series model, validated on real educational testing data.</li>
           <li>Senior member of a three-person data science team. My work seeded two follow-on projects taken on by later-hired data scientists, whom I onboarded and supported with internal code documentation.</li>
           <li>Derived an efficient Gibbs sampler using Pólya-Gamma augmentation, cutting runtime by roughly 30% and making inference tractable at scale.</li>
           <li>Validated parameter recovery and released the implementation as an R package.</li>
         </ul>
         <div class="entry-links">
           <a href="{{ '/projects/educational-intervention-effects/' | relative_url }}">Intervention effects</a>
-          <a href="https://github.com/josephresch/BayesianTDCM" target="_blank" rel="noopener">BayesianTDCM (R)</a>
         </div>
       </article>
 
@@ -123,7 +122,7 @@ title: Joseph Resch
           <div class="entry-date">2018 &ndash; 2020</div>
         </div>
         <ul>
-          <li>Built sequential Gaussian-process surrogate models with space-filling designs to calibrate an expensive black-box simulator (a hydrological inverse problem), improving fit by roughly 20% over competing methods; co-authored a paper in the <em>Journal of Statistical Theory and Practice</em>.</li>
+          <li>Built sequential Gaussian-process surrogate models with space-filling experimental designs to calibrate an expensive hydrological black-box simulator, improving fit by roughly 20% over competing methods; co-authored a paper in the <em>Journal of Statistical Theory and Practice</em>.</li>
           <li>Ran large-scale parallelized simulations on an HPC cluster in R.</li>
         </ul>
         <div class="entry-links">
@@ -183,6 +182,11 @@ title: Joseph Resch
           <div class="entry-links">
             <a href="https://link.springer.com/article/10.1007/s42519-022-00312-5" target="_blank" rel="noopener">DOI</a>
           </div>
+        </article>
+        <article class="pub">
+          <h3>A Mean-Value Sampler for Bayesian Exponential-family Random Graph Models</h3>
+          <p class="pub-authors">Handcock, M. S., &amp; <span class="pub-me">Resch, J.</span></p>
+          <p class="pub-venue">Under review</p>
         </article>
       </div>
     </div>
