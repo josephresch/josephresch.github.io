@@ -809,6 +809,13 @@ a {
   line-height: 1.35;
 }
 
+/* The author's own name in a citation: weight and ink colour only, so it
+   reads as emphasis rather than as a link or a separate element. */
+.pub-me {
+  font-weight: 600;
+  color: var(--ink);
+}
+
 .pub-authors {
   text-wrap: pretty;
   font-family: var(--serif);
